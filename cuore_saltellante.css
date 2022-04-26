@@ -1,0 +1,72 @@
+h1 {
+    text-align: center;
+    color: red;
+    font-size: 30px;
+}
+
+.back {
+    background-color: whitesmoke;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+/*anima del cuore*/
+.cuore {
+    height: 50px;
+    width: 50px;
+    background-color: pink;
+    transform: rotate(-45deg);
+    top: 25px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    animation-name: saltello;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+/*parti rotonde del cuore*/
+.cuore:before { 
+    background-color: pink;
+    border-radius: 50%;
+    position: absolute;
+    content: "";
+    top: -25px;
+    left: 0px;
+    width: 50px;
+    height: 50px;
+}
+
+.cuore:after {
+    background-color: pink;
+    border-radius: 50%;
+    position: absolute;
+    content: "";
+    top: 0px;
+    left: 25px;
+    width: 50px;
+    height: 50px;
+}
+/*movimento rimbalzante*/
+@keyframes saltello {
+    0% {
+        top: 0px;
+        position: relative;
+    }
+    50% {
+        top: 230px;
+        position: relative;
+        border-bottom-left-radius: 80%;
+        transform:scaleY(0.5) scaleX(2) rotate(-45deg);
+    }
+    100%  {
+        top:0px;
+        position: relative;
+    }
+}
+
+footer{
+    position:relative;
+    top: 320px;
+    font-family: Arial, Helvetica, sans-serif;
+}
